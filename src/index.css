@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --background-base-color: 58, 58, 58;
   --base-color: 255, 255, 255;
+  --base-color-dark: 58, 58, 58;
   --padding-side: 120px;
 }
 
