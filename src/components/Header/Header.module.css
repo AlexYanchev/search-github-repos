@@ -1,8 +1,11 @@
 .header {
-  display: flex;
-  align-items: center;
-  background: var(--header-color);
-  height: 72px;
+  background: rgba(var(--background-base-color), 1);
   padding: 24px var(--padding-side);
+  width: 100%;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
 }

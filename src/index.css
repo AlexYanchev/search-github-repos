@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --background-base-color: 58, 58, 58;
+  --base-color: 255, 255, 255;
+  --padding-side: 120px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,10 +18,7 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  --base-color: #fff;
-  --header-color: #3a3a3a;
-  --padding-side: 120px;
+  height: 100vh;
 }
 
 code {

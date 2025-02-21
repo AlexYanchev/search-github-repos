@@ -6,7 +6,7 @@
 }
 
 .name {
-  color: var(--base-color);
+  color: rgba(var(--base-color), 1);
   font-size: 0.9rem;
   font-weight: 700;
 }
