@@ -1,0 +1,12 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+}
+
+.name {
+  color: var(--base-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
