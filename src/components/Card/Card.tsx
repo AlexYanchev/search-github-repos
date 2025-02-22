@@ -11,7 +11,7 @@ const Card = () => {
   return (
     <div className={styles.itemContainer}>
       <div className={styles.infoContainer}>
-        <Avatar />
+        <Avatar size={32} />
 
         <div className={styles.statusInfo}>
           <Tag elements={[<StarIcon />, <TagText text={1329} />]} />

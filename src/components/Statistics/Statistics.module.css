@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 798px;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(var(--border-color), 0.08);
+  margin-bottom: 24px;
+}

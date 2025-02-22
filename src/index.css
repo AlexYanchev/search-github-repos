@@ -3,11 +3,13 @@
 :root {
   --base-color: 255, 255, 255;
   --base-color-dark: 58, 58, 58;
+  --base-color-light-dark: 132, 134, 140;
   --padding-side: 120px;
   --tag-color: 241, 245, 249;
   --link-color: 30, 137, 240;
   --detail-button-background-color: 212, 67, 51;
   --notification-background-color: 212, 67, 51;
+  --border-color: 33, 34, 35;
 }
 
 * {
@@ -27,6 +29,7 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: rgba(var(--base-color-dark), 1);
 }
 
 code {

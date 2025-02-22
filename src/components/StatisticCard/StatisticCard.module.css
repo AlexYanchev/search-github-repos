@@ -1,0 +1,32 @@
+.container {
+  padding: 19px 16px;
+  background: rgba(var(--base-color-dark), 0.04);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 20px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(var(--base-color-dark), 0.08);
+  border-radius: 100%;
+}
+
+.detailTitle {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+
+.detailDescription {
+  color: rgba(var(--base-color-light-dark), 1);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
