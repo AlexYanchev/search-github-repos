@@ -1,23 +1,39 @@
 import React, { FC } from 'react';
 import { I_IconProps } from '../../../types/I_IconProps';
 
-const LinkIcon: FC<I_IconProps> = ({ size = '24' }) => {
+const LinkIcon: FC<I_IconProps> = ({
+  size = '24',
+  width,
+  height,
+  boxClassName,
+  pathStrokeColor,
+  pathStrokeWidth,
+}) => {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+    <div
+      className={boxClassName}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
     >
-      <path
-        d='M13.3478 17.0168L11.4698 18.8949C10.6259 19.7388 9.48126 20.2129 8.28779 20.2129C7.09432 20.2129 5.94972 19.7388 5.10581 18.8949C4.26189 18.051 3.78779 16.9064 3.78779 15.7129C3.78779 14.5194 4.26189 13.3748 5.10581 12.5309L6.94241 10.6943M10.6938 6.94289L12.5304 5.10629C13.3743 4.26238 14.5189 3.78827 15.7124 3.78827C16.9059 3.78827 18.0505 4.26238 18.8944 5.10629C19.7383 5.9502 20.2124 7.0948 20.2124 8.28827C20.2124 9.48174 19.7383 10.6263 18.8944 11.4703L17.0164 13.3483M9.11875 14.8819L14.9477 9.05294'
-        stroke='#3A3A3A'
-        strokeWidth='2'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-      />
-    </svg>
+      <svg
+        width={width}
+        height={height}
+        viewBox={`0 0 ${20} ${20}`}
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          d='M11.3478 15.0168L9.46977 16.8949C8.62586 17.7388 7.48126 18.2129 6.28779 18.2129C5.09432 18.2129 3.94972 17.7388 3.10581 16.8949C2.26189 16.051 1.78779 14.9064 1.78779 13.7129C1.78779 12.5194 2.26189 11.3748 3.10581 10.5309L4.94241 8.69431M8.69383 4.94289L10.5304 3.10629C11.3743 2.26238 12.5189 1.78827 13.7124 1.78827C14.9059 1.78827 16.0505 2.26238 16.8944 3.10629C17.7383 3.9502 18.2124 5.0948 18.2124 6.28827C18.2124 7.48174 17.7383 8.62634 16.8944 9.47025L15.0164 11.3483M7.11875 12.8819L12.9477 7.05294'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          stroke={pathStrokeColor}
+          strokeWidth={pathStrokeWidth}
+        />
+      </svg>
+    </div>
   );
 };
 

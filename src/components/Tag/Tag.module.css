@@ -1,0 +1,8 @@
+.container {
+  padding: 4px 8px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(var(--tag-color), 1);
+}

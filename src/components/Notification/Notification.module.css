@@ -1,0 +1,14 @@
+.container {
+  padding: 2px 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  background: rgba(var(--notification-background-color), 1);
+  position: absolute;
+  top: -6px;
+  right: -9px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgb(var(--base-color));
+  line-height: 1;
+}

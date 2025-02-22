@@ -4,6 +4,10 @@
   --base-color: 255, 255, 255;
   --base-color-dark: 58, 58, 58;
   --padding-side: 120px;
+  --tag-color: 241, 245, 249;
+  --link-color: 30, 137, 240;
+  --detail-button-background-color: 212, 67, 51;
+  --notification-background-color: 212, 67, 51;
 }
 
 * {
@@ -12,13 +16,17 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+  list-style-type: none;
+}
+
 body {
   margin: 0;
   font-family: 'Noto Sans', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
 }
 
 code {

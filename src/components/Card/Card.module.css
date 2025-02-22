@@ -1,0 +1,67 @@
+.itemContainer {
+  height: 180px;
+  width: 100%;
+  max-width: 282px;
+  border-radius: 20px;
+  background-color: rgb(var(--base-color));
+  padding: 24px;
+  margin-bottom: 12px;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statusInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.loginContainer {
+  margin-bottom: 16px;
+}
+
+.login {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(var(--base-color-dark));
+  margin-bottom: 8px;
+}
+
+.loginLink {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgb(var(--link-color));
+}
+
+.controlButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.favoritePanel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.detailedButton {
+  background: rgba(var(--detail-button-background-color), 1);
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: rgb(var(--base-color));
+  border-radius: 8px;
+  border: none;
+}
+
+.icons {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--base-color-dark), 0.12);
+}

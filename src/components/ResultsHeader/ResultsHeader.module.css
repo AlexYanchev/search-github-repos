@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+.selectContainer {
+  position: relative;
+  flex-basis: 286px;
+}
+
+.select {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  appearance: none;
+  width: 100%;
+  height: 3rem;
+}
+
+.selectContainer::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  background-image: url('/public/images/icons/arrow.svg');
+  background-repeat: no-repeat;
+  transition: transform ease 0.1s;
+}
+
+.selectContainer[data-isopen='true']::after {
+  transform: rotate(180deg);
+}
