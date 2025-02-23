@@ -7,7 +7,7 @@ interface SearchProps {
 }
 
 const Search: FC<SearchProps> = ({ delay = 1000 }) => {
-  const store = useStore();
+  const { reposStore: store } = useStore();
   const [searchValue, setSearchValue] = useState<string>('');
   const timeoutRef = useRef<NodeJS.Timeout>(null);
 

@@ -6,8 +6,14 @@ import React, {
   useMemo,
 } from 'react';
 import RepositoriesStore from '../../libs/mobx/stores/RepositoriesStore';
+import PagesStore from '../../libs/mobx/stores/PagesStore';
 
-const StoreContext = createContext<RepositoriesStore | null>(null);
+interface Context {
+  reposStore: RepositoriesStore;
+  pagesStore: PagesStore;
+}
+
+const StoreContext = createContext<Context | null>(null);
 
 interface StoreProviderProps {
   children: ReactNode;
@@ -15,7 +21,10 @@ interface StoreProviderProps {
 
 const StoreProvider: FC<StoreProviderProps> = ({ children }) => {
   const store = useMemo(() => {
-    return new RepositoriesStore();
+    return {
+      reposStore: new RepositoriesStore(),
+      pagesStore: new PagesStore(),
+    };
   }, []);
 
   return (
@@ -23,6 +32,6 @@ const StoreProvider: FC<StoreProviderProps> = ({ children }) => {
   );
 };
 
-export const useStore = () => useContext(StoreContext) as RepositoriesStore;
+export const useStore = () => useContext(StoreContext) as Context;
 
 export default StoreProvider;

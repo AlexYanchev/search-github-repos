@@ -4,4 +4,5 @@ export interface I_IconProps {
   width?: string;
   height?: string;
   size?: string;
+  pathFill?: string;
 }

@@ -4,6 +4,7 @@
   max-width: 862px;
   padding: 32px;
   background: rgb(var(--base-color));
+  margin: 0 auto;
 }
 
 .title {
@@ -15,6 +16,7 @@
 .info {
   display: flex;
   gap: 24px;
+  margin-bottom: 24px;
 }
 
 .name {

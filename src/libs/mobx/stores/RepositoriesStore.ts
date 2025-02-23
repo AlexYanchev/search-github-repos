@@ -1,21 +1,58 @@
-import { action, observable, makeObservable } from 'mobx';
+import { action, observable, makeObservable, computed } from 'mobx';
 import { I_Repository } from '../../../types/I_Repository';
 import StateStore from './StateStore';
 
 class RepositoriesStore {
   repos: Array<I_Repository> = [];
+  favoriteRepos: Record<number, I_Repository> = {};
+  favoriteReposIds: Array<number> = [];
   state: StateStore = new StateStore();
   private abortController: AbortController | null = null;
 
   constructor() {
     makeObservable(this, {
       repos: observable,
+      favoriteRepos: observable,
+      favoriteReposIds: observable,
       setRepos: action,
+      toggleFavoriteRepos: action,
+      getFavoriteCount: computed,
     });
+  }
+
+  get getFavoriteCount() {
+    return this.favoriteReposIds.length;
   }
 
   setRepos(repos: Array<I_Repository>) {
     this.repos = repos;
+  }
+
+  toggleFavoriteRepos(repo: I_Repository) {
+    if (this.favoriteRepos[repo.id]) {
+      this.favoriteReposIds = this.favoriteReposIds.filter(
+        (id) => id !== repo.id
+      );
+
+      delete this.favoriteRepos[repo.id];
+    } else {
+      this.favoriteRepos[repo.id] = repo;
+      this.favoriteReposIds.push(repo.id);
+    }
+  }
+
+  private async customFetch(value: string, options?: RequestInit) {
+    return fetch(
+      `https://api.github.com/search/repositories?q=${value}&per_page=100&type=Repositories`,
+
+      options
+    ).then((res) => {
+      if (!res.ok) {
+        console.log(res);
+        throw res;
+      }
+      return res.json();
+    });
   }
 
   async getRepos(value: string) {
@@ -23,18 +60,13 @@ class RepositoriesStore {
       if (this.abortController) {
         this.abortController.abort();
       }
-
       this.abortController = new AbortController();
 
-      const res = await fetch(
-        `https://api.github.com/search/repositories?q=${value}&per_page=100`,
-        { signal: this.abortController.signal }
-      );
-      if (!res.ok) {
-        console.log(res);
-        throw res;
-      }
-      const data = (await res.json()) as { items: Array<I_Repository> };
+      const res = await this.customFetch(value, {
+        signal: this.abortController.signal,
+      });
+
+      const data = res as { items: Array<I_Repository> };
       this.setRepos(data.items);
     });
   }

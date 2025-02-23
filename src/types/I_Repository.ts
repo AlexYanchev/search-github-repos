@@ -2,6 +2,7 @@ import { I_OwnerRepo } from './I_OwnerRepo';
 
 export interface I_Repository {
   id: number;
+  name: string;
   forks_count: number;
   stargazers_count: number;
   archived: boolean;
@@ -11,4 +12,5 @@ export interface I_Repository {
   full_name: string;
   description: string;
   owner: I_OwnerRepo;
+  html_url: string;
 }

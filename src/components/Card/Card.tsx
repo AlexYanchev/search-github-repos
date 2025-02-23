@@ -10,12 +10,21 @@ import ActionButton from '../ActionButton/ActionButton';
 import { I_Repository } from '../../types/I_Repository';
 import { FC } from 'react';
 import ActionIcon from '../ActionIcon/ActionIcon';
+import ToggleFavoriteIcon from '../ToggleFavoriteIcon/ToggleFavoriteIcon';
+import CopiedRepoLinkIcon from '../CopiedRepoLinkIcon/CopiedRepoLinkIcon';
+import { observer } from 'mobx-react';
+import { useStore } from '../../providers/store/store';
+import { E_Pages } from '../../types/E_Pages';
 
 interface CardProps {
   repo: I_Repository;
 }
 
-const Card: FC<CardProps> = ({ repo }) => {
+const Card: FC<CardProps> = observer(({ repo }) => {
+  const { reposStore: store, pagesStore } = useStore();
+  const onClick = () => {
+    store.toggleFavoriteRepos(repo);
+  };
   return (
     <div className={styles.itemContainer}>
       <div className={styles.infoContainer}>
@@ -33,26 +42,22 @@ const Card: FC<CardProps> = ({ repo }) => {
       <ActionsPanel
         actionsIconGap='small'
         actions={[
-          <ActionIcon size='small'>
-            <HeartIcon
-              width='18'
-              height='15'
-              pathStrokeColor='rgba(var(--base-color-dark), 1)'
-              pathStrokeWidth={1}
-            />
-          </ActionIcon>,
-          <ActionIcon size='small'>
-            <LinkIcon
-              width='20'
-              height='20'
-              pathStrokeColor='rgba(var(--base-color-dark), 1)'
-              pathStrokeWidth={2}
-            />
-          </ActionIcon>,
+          <ToggleFavoriteIcon
+            size='small'
+            onClick={onClick}
+            isFavorite={Boolean(store.favoriteRepos[repo.id])}
+          />,
+          <CopiedRepoLinkIcon size='small' copiedText={repo.html_url} />,
         ]}
-        actionButtons={[<ActionButton text='Подробнее' pSize='small' />]}
+        actionButtons={[
+          <ActionButton
+            text='Подробнее'
+            pSize='small'
+            onAction={() => pagesStore.setPage(E_Pages.PROFILE, repo.id)}
+          />,
+        ]}
       />
     </div>
   );
-};
+});
 export default Card;
