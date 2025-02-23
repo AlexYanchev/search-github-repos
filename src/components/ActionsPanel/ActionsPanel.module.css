@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-s);
+  border: 1px solid rgba(var(--base-color-dark), 0.12);
+}

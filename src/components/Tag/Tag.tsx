@@ -2,15 +2,15 @@ import React, { FC, ReactNode } from 'react';
 import styles from './Tag.module.css';
 
 interface TagProps {
-  elements: Array<ReactNode>;
+  icon?: ReactNode;
+  text: string | number;
 }
 
-const Tag: FC<TagProps> = ({ elements }) => {
+const Tag: FC<TagProps> = ({ icon, text }) => {
   return (
     <div className={styles.container}>
-      {elements.map((element, i) => {
-        return <React.Fragment key={i}>{element}</React.Fragment>;
-      })}
+      {icon}
+      <p className={styles.text}>{text}</p>
     </div>
   );
 };

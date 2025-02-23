@@ -3,9 +3,10 @@ import StarIcon from '../../asserts/icons/StarIcon/StarIcon';
 import Avatar from '../Avatar/Avatar';
 import Tag from '../Tag/Tag';
 import styles from './Card.module.css';
-import TagText from '../TagText/TagText';
 import HeartIcon from '../../asserts/icons/HeartIcon/HeartIcon';
 import LinkIcon from '../../asserts/icons/LinkIcon/LinkIcon';
+import ActionsPanel from '../ActionsPanel/ActionsPanel';
+import ActionButton from '../ActionButton/ActionButton';
 
 const Card = () => {
   return (
@@ -14,35 +15,33 @@ const Card = () => {
         <Avatar size={32} />
 
         <div className={styles.statusInfo}>
-          <Tag elements={[<StarIcon />, <TagText text={1329} />]} />
-          <Tag elements={[<ForkIcon />, <TagText text={234} />]} />
+          <Tag icon={<StarIcon />} text={1329} />
+          <Tag icon={<ForkIcon />} text={234} />
         </div>
       </div>
       <div className={styles.loginContainer}>
         <p className={styles.login}>@tinghuiz</p>
         <p className={styles.loginLink}>tinghuiz/SfMLearner</p>
       </div>
-      <div className={styles.controlButtons}>
-        <div className={styles.favoritePanel}>
+      <ActionsPanel
+        actionsIconGap='small'
+        actionsIconSize='small'
+        actions={[
           <HeartIcon
-            boxClassName={styles.icons}
             width='18'
             height='15'
             pathStrokeColor='rgba(var(--base-color-dark), 1)'
             pathStrokeWidth={1}
-          />
+          />,
           <LinkIcon
             width='20'
             height='20'
-            boxClassName={styles.icons}
             pathStrokeColor='rgba(var(--base-color-dark), 1)'
             pathStrokeWidth={2}
-          />
-        </div>
-        <button className={styles.detailedButton} type='button'>
-          Подробнее
-        </button>
-      </div>
+          />,
+        ]}
+        actionButtons={[<ActionButton text='Подробнее' pSize='small' />]}
+      />
     </div>
   );
 };

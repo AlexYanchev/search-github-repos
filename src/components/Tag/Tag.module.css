@@ -6,3 +6,8 @@
   gap: 4px;
   background: rgba(var(--tag-color), 1);
 }
+
+.text {
+  font-weight: 400;
+  font-size: 0.625rem;
+}

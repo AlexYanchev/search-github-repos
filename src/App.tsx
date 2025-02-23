@@ -8,24 +8,24 @@ import Profile from './components/Profile/Profile';
 
 function App() {
   useEffect(() => {
-    fetch('https://api.github.com/search/repositories?q=Alex')
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-      })
-      .then((res) => {
-        console.log(res);
-      });
+    // fetch('https://api.github.com/search/repositories?q=Gecko')
+    //   .then((res) => {
+    //     if (res.ok) {
+    //       return res.json();
+    //     }
+    //   })
+    //   .then((res) => {
+    //     console.log(res);
+    //   });
   }, []);
   return (
     <div className={styles.app}>
       <Header />
       <div className={styles.mainContainer}>
         <main className={styles.main}>
-          {/* <Search />
+          <Search />
           <ResultsHeader />
-          <Results /> */}
+          <Results />
           <Profile />
         </main>
       </div>

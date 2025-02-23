@@ -1,0 +1,9 @@
+.actionButton {
+  background: rgba(var(--detail-button-background-color), 1);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: rgb(var(--base-color));
+  border-radius: var(--border-radius-s);
+  border: none;
+}

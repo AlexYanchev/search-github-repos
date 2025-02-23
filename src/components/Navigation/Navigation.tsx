@@ -9,7 +9,9 @@ const Navigation = () => {
       <ul className={styles.items}>
         <li className={styles.item}>
           <a href='/' title='Избранное'>
-            <HeartIcon width='16' height='13' boxClassName={styles.heartIcon} />
+            <div className={styles.icon}>
+              <HeartIcon width='16' height='13' />
+            </div>
           </a>
           <Notification value={4} />
         </li>

@@ -4,6 +4,8 @@ import Avatar from '../Avatar/Avatar';
 import HeartIcon from '../../asserts/icons/HeartIcon/HeartIcon';
 import LinkIcon from '../../asserts/icons/LinkIcon/LinkIcon';
 import Statistics from '../Statistics/Statistics';
+import ActionButton from '../ActionButton/ActionButton';
+import ActionsPanel from '../ActionsPanel/ActionsPanel';
 
 const Profile = () => {
   return (
@@ -20,27 +22,27 @@ const Profile = () => {
         </div>
       </div>
       <Statistics />
-      <div className={styles.controlButtons}>
-        <div className={styles.favoritePanel}>
+      <ActionsPanel
+        actionsIconGap='medium'
+        actionsIconSize='medium'
+        actions={[
           <LinkIcon
             width='24'
             height='24'
-            boxClassName={styles.icons}
             pathStrokeColor='rgba(var(--base-color-dark), 1)'
             pathStrokeWidth={2}
-          />
+          />,
           <HeartIcon
-            boxClassName={styles.icons}
             width='23'
             height='19'
             pathStrokeColor='rgba(var(--base-color-dark), 1)'
             pathStrokeWidth={1}
-          />
-        </div>
-        <button className={styles.detailedButton} type='button'>
-          Открыть репотизторий
-        </button>
-      </div>
+          />,
+        ]}
+        actionButtons={[
+          <ActionButton text='Открыть репотизторий' pSize='medium' />,
+        ]}
+      />
     </section>
   );
 };

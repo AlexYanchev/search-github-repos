@@ -5,7 +5,7 @@
 .input {
   width: 100%;
   padding: 16px 20px;
-  border-radius: 12px;
+  border-radius: var(--border-radius-m);
   border: none;
   margin-bottom: 48px;
 }

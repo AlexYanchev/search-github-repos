@@ -10,6 +10,20 @@
   --detail-button-background-color: 212, 67, 51;
   --notification-background-color: 212, 67, 51;
   --border-color: 33, 34, 35;
+
+  --action-button-padding-small: 8px 16px;
+  --action-button-padding-medium: 12px 16px;
+
+  --actions-gap-small: 16px;
+  --actions-gap-medium: 32px;
+
+  --actions-icon-size-small: 32px;
+  --actions-icon-size-medium: 40px;
+
+  --border-radius-xs: 4px;
+  --border-radius-s: 8px;
+  --border-radius-m: 12px;
+  --border-radius-lg: 20px;
 }
 
 * {
