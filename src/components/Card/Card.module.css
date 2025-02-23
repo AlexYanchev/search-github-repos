@@ -25,14 +25,22 @@
 }
 
 .login {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   font-size: 1rem;
   font-weight: 600;
   color: rgb(var(--base-color-dark));
   margin-bottom: 8px;
 }
 
-.loginLink {
+.repoLink {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   font-size: 0.9rem;
   font-weight: 400;
   color: rgb(var(--link-color));
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

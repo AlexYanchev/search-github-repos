@@ -27,8 +27,8 @@
 
   --spinner-size-xs: 10px;
   --spinner-size-s: 15px;
-  --spinner-size-m: 20px;
-  --spinner-size-lg: 30px;
+  --spinner-size-m: 30px;
+  --spinner-size-lg: 50px;
 
   --spinner-color: rgb(var(--base-color-dark));
 }

@@ -6,13 +6,14 @@ import LinkIcon from '../../asserts/icons/LinkIcon/LinkIcon';
 import Statistics from '../Statistics/Statistics';
 import ActionButton from '../ActionButton/ActionButton';
 import ActionsPanel from '../ActionsPanel/ActionsPanel';
+import ActionIcon from '../ActionIcon/ActionIcon';
 
 const Profile = () => {
   return (
     <section className={styles.container}>
       <h1 className={styles.title}>Профиль</h1>
       <div className={styles.info}>
-        <Avatar size={125} />
+        <Avatar src='' size={125} />
         <div className={styles.infoDetail}>
           <h2 className={styles.name}>tanya-ling/middle-russian-parser</h2>
           <p className={styles.description}>
@@ -24,20 +25,23 @@ const Profile = () => {
       <Statistics />
       <ActionsPanel
         actionsIconGap='medium'
-        actionsIconSize='medium'
         actions={[
-          <LinkIcon
-            width='24'
-            height='24'
-            pathStrokeColor='rgba(var(--base-color-dark), 1)'
-            pathStrokeWidth={2}
-          />,
-          <HeartIcon
-            width='23'
-            height='19'
-            pathStrokeColor='rgba(var(--base-color-dark), 1)'
-            pathStrokeWidth={1}
-          />,
+          <ActionIcon size='medium'>
+            <LinkIcon
+              width='24'
+              height='24'
+              pathStrokeColor='rgba(var(--base-color-dark), 1)'
+              pathStrokeWidth={2}
+            />
+          </ActionIcon>,
+          <ActionIcon size='medium'>
+            <HeartIcon
+              width='23'
+              height='19'
+              pathStrokeColor='rgba(var(--base-color-dark), 1)'
+              pathStrokeWidth={1}
+            />
+          </ActionIcon>,
         ]}
         actionButtons={[
           <ActionButton text='Открыть репотизторий' pSize='medium' />,

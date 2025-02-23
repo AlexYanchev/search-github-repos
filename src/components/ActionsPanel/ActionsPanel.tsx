@@ -3,7 +3,6 @@ import styles from './ActionsPanel.module.css';
 
 interface ActionsPanelProps {
   actions: Array<ReactNode>;
-  actionsIconSize: 'small' | 'medium';
   actionsIconGap: 'small' | 'medium';
   actionButtons: Array<ReactNode>;
 }
@@ -11,7 +10,6 @@ interface ActionsPanelProps {
 const ActionsPanel: FC<ActionsPanelProps> = ({
   actions,
   actionButtons,
-  actionsIconSize,
   actionsIconGap,
 }) => {
   return (
@@ -21,18 +19,7 @@ const ActionsPanel: FC<ActionsPanelProps> = ({
         className={styles.actions}
       >
         {actions.map((action, i) => {
-          return (
-            <div
-              key={i}
-              style={{
-                width: `var(--actions-icon-size-${actionsIconSize})`,
-                height: `var(--actions-icon-size-${actionsIconSize})`,
-              }}
-              className={styles.icon}
-            >
-              {action}
-            </div>
-          );
+          return <React.Fragment key={i}>{action}</React.Fragment>;
         })}
       </div>
       {actionButtons.map((button, i) => {
