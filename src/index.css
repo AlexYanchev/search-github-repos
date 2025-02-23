@@ -24,6 +24,13 @@
   --border-radius-s: 8px;
   --border-radius-m: 12px;
   --border-radius-lg: 20px;
+
+  --spinner-size-xs: 10px;
+  --spinner-size-s: 15px;
+  --spinner-size-m: 20px;
+  --spinner-size-lg: 30px;
+
+  --spinner-color: rgb(var(--base-color-dark));
 }
 
 * {
