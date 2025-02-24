@@ -27,6 +27,7 @@ const Navigation = observer(() => {
                   : 'transparent',
               }}
               className={styles.icon}
+              title='Избранное'
             >
               <HeartIcon width='16' height='13' isNavigation={true} />
             </div>

@@ -14,6 +14,7 @@ const ActionButton: FC<ActionButtonProps> = ({ text, pSize, onAction }) => {
       className={styles.actionButton}
       type='button'
       onClick={onAction}
+      title={text}
     >
       {text}
     </button>
