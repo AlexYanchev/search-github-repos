@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useCallback, useMemo } from 'react';
 import styles from './Profile.module.css';
 import Avatar from '../Avatar/Avatar';
 import Statistics from '../Statistics/Statistics';
@@ -15,12 +15,12 @@ const Profile: FC = observer(() => {
     return reposStore.activeRepo;
   }, []);
 
-  const onClick = () => {
+  const onClick = useCallback(() => {
     if (!repo) {
       return;
     }
     reposStore.toggleFavoriteRepos(repo);
-  };
+  }, [repo]);
 
   return (
     <section className={styles.container}>

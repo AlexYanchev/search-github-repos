@@ -36,7 +36,7 @@ const Statistics = () => {
           />
           <StatisticCard
             icon={<ConsoleIcon />}
-            value={activeRepo.language}
+            value={activeRepo.language || '-'}
             text='Язык'
           />
           <StatisticCard

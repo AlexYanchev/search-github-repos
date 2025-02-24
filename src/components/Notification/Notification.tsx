@@ -8,4 +8,4 @@ interface NotificationProps {
 const Notification: FC<NotificationProps> = ({ value }) => {
   return <div className={styles.container}>{value}</div>;
 };
-export default Notification;
+export default React.memo(Notification);

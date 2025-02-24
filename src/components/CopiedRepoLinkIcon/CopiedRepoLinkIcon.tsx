@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import ActionIcon from '../ActionIcon/ActionIcon';
 import LinkIcon from '../../asserts/icons/LinkIcon/LinkIcon';
 
@@ -11,13 +11,13 @@ const CopiedRepoLinkIcon: FC<CopiedRepoLinkIconProps> = ({
   size,
   copiedText,
 }) => {
-  const onClick = async () => {
+  const onClick = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(copiedText);
     } catch (e) {
       console.log(e);
     }
-  };
+  }, [copiedText]);
 
   const defaultIcon = <LinkIcon width='20' height='20' />;
   const getIcon = () => {
@@ -37,4 +37,4 @@ const CopiedRepoLinkIcon: FC<CopiedRepoLinkIconProps> = ({
     </ActionIcon>
   );
 };
-export default CopiedRepoLinkIcon;
+export default React.memo(CopiedRepoLinkIcon);

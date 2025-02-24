@@ -21,4 +21,4 @@ const ActionIcon: FC<ActionIconProps> = ({ children, size, onClick }) => {
     </div>
   );
 };
-export default ActionIcon;
+export default React.memo(ActionIcon);

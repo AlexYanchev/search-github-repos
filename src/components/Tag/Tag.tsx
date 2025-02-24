@@ -14,4 +14,4 @@ const Tag: FC<TagProps> = ({ icon, text }) => {
     </div>
   );
 };
-export default Tag;
+export default React.memo(Tag);

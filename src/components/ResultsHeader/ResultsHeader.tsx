@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import styles from './ResultsHeader.module.css';
 import { E_Sort } from '../../types/E_Sort';
 import { useStore } from '../../providers/store/store';
@@ -62,4 +62,4 @@ const ResultsHeader: FC<ResultsHeaderProps> = ({ title }) => {
     </div>
   );
 };
-export default ResultsHeader;
+export default React.memo(ResultsHeader);

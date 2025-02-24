@@ -20,4 +20,4 @@ const ActionButton: FC<ActionButtonProps> = ({ text, pSize, onAction }) => {
     </button>
   );
 };
-export default ActionButton;
+export default React.memo(ActionButton);

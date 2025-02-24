@@ -6,7 +6,7 @@ import styles from './Card.module.css';
 import ActionsPanel from '../ActionsPanel/ActionsPanel';
 import ActionButton from '../ActionButton/ActionButton';
 import { I_Repository } from '../../types/I_Repository';
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import ToggleFavoriteIcon from '../ToggleFavoriteIcon/ToggleFavoriteIcon';
 import CopiedRepoLinkIcon from '../CopiedRepoLinkIcon/CopiedRepoLinkIcon';
 import { observer } from 'mobx-react';
@@ -19,9 +19,16 @@ interface CardProps {
 
 const Card: FC<CardProps> = observer(({ repo }) => {
   const { reposStore: store, pagesStore } = useStore();
-  const onClick = () => {
+
+  const onClick = useCallback(() => {
     store.toggleFavoriteRepos(repo);
-  };
+  }, [repo]);
+
+  const onAction = useCallback(() => {
+    pagesStore.addPage(E_Pages.PROFILE);
+    store.setActiveRepo(repo);
+  }, [repo]);
+
   return (
     <>
       <div className={styles.infoContainer}>
@@ -50,14 +57,7 @@ const Card: FC<CardProps> = observer(({ repo }) => {
           <CopiedRepoLinkIcon size='small' copiedText={repo.html_url} />,
         ]}
         actionButtons={[
-          <ActionButton
-            text='Подробнее'
-            pSize='small'
-            onAction={() => {
-              pagesStore.addPage(E_Pages.PROFILE);
-              store.setActiveRepo(repo);
-            }}
-          />,
+          <ActionButton text='Подробнее' pSize='small' onAction={onAction} />,
         ]}
       />
     </>

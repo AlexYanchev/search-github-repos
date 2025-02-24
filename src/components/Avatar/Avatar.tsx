@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import styles from './Avatar.module.css';
 
 interface AvatarProps {
@@ -18,4 +18,4 @@ const Avatar: FC<AvatarProps> = ({ size, src }) => {
     </div>
   );
 };
-export default Avatar;
+export default React.memo(Avatar);

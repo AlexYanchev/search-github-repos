@@ -3,7 +3,7 @@ import Card from '../Card/Card';
 import { useStore } from '../../providers/store/store';
 import { observer } from 'mobx-react';
 import Spinner from '../Spinner/Spinner';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { I_Repository } from '../../types/I_Repository';
 
 interface ResultsProps {
@@ -29,4 +29,4 @@ const Results: FC<ResultsProps> = observer(({ list }) => {
     </div>
   );
 });
-export default Results;
+export default React.memo(Results);

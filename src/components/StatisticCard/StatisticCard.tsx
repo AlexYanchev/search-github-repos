@@ -18,4 +18,4 @@ const StatisticCard: FC<StatisticCardProps> = ({ icon, value, text }) => {
     </div>
   );
 };
-export default StatisticCard;
+export default React.memo(StatisticCard);

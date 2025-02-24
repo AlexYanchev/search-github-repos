@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import styles from './Search.module.css';
 import { useStore } from '../../providers/store/store';
 
@@ -45,4 +45,4 @@ const Search: FC<SearchProps> = ({ delay = 1000 }) => {
     </form>
   );
 };
-export default Search;
+export default React.memo(Search);

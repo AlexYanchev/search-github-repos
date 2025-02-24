@@ -28,4 +28,4 @@ const ActionsPanel: FC<ActionsPanelProps> = ({
     </div>
   );
 };
-export default ActionsPanel;
+export default React.memo(ActionsPanel);
