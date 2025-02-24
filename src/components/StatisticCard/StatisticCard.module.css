@@ -2,7 +2,7 @@
   padding: 19px 16px;
   background: rgba(var(--base-color-dark), 0.04);
   display: flex;
-  gap: 6px;
+  gap: 16px;
   align-items: center;
   width: 100%;
   max-width: 250px;

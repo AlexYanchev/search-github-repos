@@ -4,4 +4,5 @@
   align-items: center;
   border-radius: var(--border-radius-s);
   border: 1px solid rgba(var(--base-color-dark), 0.12);
+  cursor: pointer;
 }

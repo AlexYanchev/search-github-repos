@@ -13,12 +13,21 @@ const Navigation = observer(() => {
     e.preventDefault();
     pagesStore.addPage(E_Pages.FAVORITES);
   };
+
+  const isFavoritePage = pagesStore.currentPage === E_Pages.FAVORITES;
   return (
     <nav>
       <ul className={styles.items}>
         <li className={styles.item}>
           <a href='/' title='Избранное' onClick={linkTo}>
-            <div className={styles.icon}>
+            <div
+              style={{
+                background: isFavoritePage
+                  ? `rgba(var(--base-color), 0.12)`
+                  : 'transparent',
+              }}
+              className={styles.icon}
+            >
               <HeartIcon width='16' height='13' isNavigation={true} />
             </div>
           </a>

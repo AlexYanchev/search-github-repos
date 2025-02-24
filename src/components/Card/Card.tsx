@@ -28,8 +28,11 @@ const Card: FC<CardProps> = observer(({ repo }) => {
         <Avatar src={repo.owner.avatar_url} size={32} />
 
         <div className={styles.statusInfo}>
-          <Tag icon={<StarIcon />} text={repo.stargazers_count} />
-          <Tag icon={<ForkIcon />} text={repo.forks_count} />
+          <Tag
+            icon={<StarIcon />}
+            text={repo.stargazers_count.toLocaleString()}
+          />
+          <Tag icon={<ForkIcon />} text={repo.forks_count.toLocaleString()} />
         </div>
       </div>
       <div className={styles.loginContainer}>

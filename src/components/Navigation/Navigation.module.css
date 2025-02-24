@@ -17,6 +17,10 @@
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: var(--border-radius-s);
 }

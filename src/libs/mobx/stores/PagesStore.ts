@@ -9,6 +9,7 @@ class PagesStore {
       breadcrumbs: observable,
       addPage: action,
       goPrevPage: action,
+      setInitial: action,
       currentPage: computed,
       prevPage: computed,
     });
@@ -20,6 +21,10 @@ class PagesStore {
 
   get prevPage() {
     return this.breadcrumbs.at(-2) || this.breadcrumbs[0];
+  }
+
+  setInitial() {
+    this.breadcrumbs = [E_Pages.MAIN];
   }
 
   addPage(page: E_Pages) {

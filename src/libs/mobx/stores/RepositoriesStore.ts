@@ -1,6 +1,8 @@
 import { action, observable, makeObservable, computed } from 'mobx';
 import { I_Repository } from '../../../types/I_Repository';
 import StateStore from './StateStore';
+import { sortRepos } from '../../../utils/sort';
+import { E_Sort } from '../../../types/E_Sort';
 
 class RepositoriesStore {
   repos: Array<I_Repository> = [];
@@ -19,12 +21,27 @@ class RepositoriesStore {
       setRepos: action,
       toggleFavoriteRepos: action,
       setActiveRepo: action,
+      sortMainRepos: action,
+      sortFavoriteRepos: action,
       getFavoriteCount: computed,
     });
   }
 
   get getFavoriteCount() {
     return this.favoriteReposIds.length;
+  }
+
+  sortMainRepos(sort: E_Sort) {
+    this.repos = sortRepos(this.repos, sort);
+  }
+
+  sortFavoriteRepos(sort: E_Sort) {
+    const fullFavRepos = this.favoriteReposIds.map(
+      (id) => this.favoriteRepos[id]
+    );
+    this.favoriteReposIds = sortRepos(fullFavRepos, sort).map(
+      (repo) => repo.id
+    );
   }
 
   setActiveRepo(repo: I_Repository) {

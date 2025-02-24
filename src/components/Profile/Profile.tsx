@@ -30,7 +30,7 @@ const Profile: FC = observer(() => {
           <div className={styles.info}>
             <Avatar src={repo.owner.avatar_url} size={125} />
             <div className={styles.infoDetail}>
-              <h2 className={styles.name}>{repo.name}</h2>
+              <h2 className={styles.name}>{repo.full_name}</h2>
               <p className={styles.description}>{repo.description}</p>
             </div>
           </div>
