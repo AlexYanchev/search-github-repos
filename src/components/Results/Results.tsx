@@ -3,8 +3,7 @@ import Card from '../Card/Card';
 import { useStore } from '../../providers/store/store';
 import { observer } from 'mobx-react';
 import Spinner from '../Spinner/Spinner';
-import { FC, useEffect } from 'react';
-import { E_Pages } from '../../types/E_Pages';
+import { FC } from 'react';
 import { I_Repository } from '../../types/I_Repository';
 
 interface ResultsProps {

@@ -1,16 +1,11 @@
 import React, { FC, useMemo } from 'react';
 import styles from './Profile.module.css';
 import Avatar from '../Avatar/Avatar';
-import HeartIcon from '../../asserts/icons/HeartIcon/HeartIcon';
-import LinkIcon from '../../asserts/icons/LinkIcon/LinkIcon';
 import Statistics from '../Statistics/Statistics';
 import ActionButton from '../ActionButton/ActionButton';
 import ActionsPanel from '../ActionsPanel/ActionsPanel';
-import ActionIcon from '../ActionIcon/ActionIcon';
 import CopiedRepoLinkIcon from '../CopiedRepoLinkIcon/CopiedRepoLinkIcon';
 import ToggleFavoriteIcon from '../ToggleFavoriteIcon/ToggleFavoriteIcon';
-import { I_OwnerRepo } from '../../types/I_OwnerRepo';
-import { I_Repository } from '../../types/I_Repository';
 import { useStore } from '../../providers/store/store';
 import { observer } from 'mobx-react';
 

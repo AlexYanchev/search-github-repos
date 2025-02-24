@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import styles from './ToggleFavoriteIcon.module.css';
 import ActionIcon from '../ActionIcon/ActionIcon';
 import HeartIcon from '../../asserts/icons/HeartIcon/HeartIcon';
@@ -14,17 +14,12 @@ const ToggleFavoriteIcon: FC<ToggleFavoriteIconProps> = ({
   isFavorite,
   onClick,
 }) => {
-  const favoriteFill = isFavorite
-    ? 'rgba(var(--favorite-button-true), 1)'
-    : undefined;
-
   const defaultIcon = (
     <HeartIcon
       width='18'
       height='15'
       pathStrokeColor='rgba(var(--base-color-dark), 1)'
-      pathStrokeWidth={isFavorite ? 0 : 1}
-      pathFill={favoriteFill}
+      isFavorite={isFavorite}
     />
   );
   const getIcon = () => {
@@ -35,8 +30,7 @@ const ToggleFavoriteIcon: FC<ToggleFavoriteIconProps> = ({
             width='23'
             height='19'
             pathStrokeColor='rgba(var(--base-color-dark), 1)'
-            pathStrokeWidth={isFavorite ? 0 : 1}
-            pathFill={favoriteFill}
+            isFavorite={isFavorite}
           />
         );
       }

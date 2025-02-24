@@ -1,4 +1,4 @@
-import { ReactNode, FC } from 'react';
+import { FC } from 'react';
 import ActionIcon from '../ActionIcon/ActionIcon';
 import LinkIcon from '../../asserts/icons/LinkIcon/LinkIcon';
 
@@ -19,25 +19,11 @@ const CopiedRepoLinkIcon: FC<CopiedRepoLinkIconProps> = ({
     }
   };
 
-  const defaultIcon = (
-    <LinkIcon
-      width='20'
-      height='20'
-      pathStrokeColor='rgba(var(--base-color-dark), 1)'
-      pathStrokeWidth={2}
-    />
-  );
+  const defaultIcon = <LinkIcon width='20' height='20' />;
   const getIcon = () => {
     switch (size) {
       case 'medium': {
-        return (
-          <LinkIcon
-            width='24'
-            height='24'
-            pathStrokeColor='rgba(var(--base-color-dark), 1)'
-            pathStrokeWidth={2}
-          />
-        );
+        return <LinkIcon width='24' height='24' />;
       }
       case 'small':
         return defaultIcon;

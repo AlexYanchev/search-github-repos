@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import styles from './app.module.css';
 import Header from './components/Header/Header';
 import Search from './components/Search/Search';
@@ -9,7 +9,6 @@ import { observer } from 'mobx-react';
 import { useStore } from './providers/store/store';
 import { E_Pages } from './types/E_Pages';
 import BackButton from './components/BackButton/BackButton';
-import { I_Repository } from './types/I_Repository';
 
 const App: FC = observer(() => {
   const { reposStore, pagesStore } = useStore();
