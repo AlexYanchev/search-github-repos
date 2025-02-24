@@ -31,3 +31,10 @@
   line-height: 1.75rem;
   margin-bottom: 24px;
 }
+
+@media screen and (max-width: 600px) {
+  .info {
+    flex-direction: column;
+    align-items: center;
+  }
+}
