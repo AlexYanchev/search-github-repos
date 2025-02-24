@@ -11,7 +11,7 @@ const Navigation = observer(() => {
 
   const linkTo = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
-    pagesStore.setPage(E_Pages.FAVORITES);
+    pagesStore.addPage(E_Pages.FAVORITES);
   };
   return (
     <nav>
@@ -19,7 +19,7 @@ const Navigation = observer(() => {
         <li className={styles.item}>
           <a href='/' title='Избранное' onClick={linkTo}>
             <div className={styles.icon}>
-              <HeartIcon width='16' height='13' />
+              <HeartIcon width='16' height='13' isNavigation={true} />
             </div>
           </a>
           {store.getFavoriteCount > 0 && (

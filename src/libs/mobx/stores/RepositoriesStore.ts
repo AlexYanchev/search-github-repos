@@ -4,6 +4,7 @@ import StateStore from './StateStore';
 
 class RepositoriesStore {
   repos: Array<I_Repository> = [];
+  activeRepo: I_Repository | null = null;
   favoriteRepos: Record<number, I_Repository> = {};
   favoriteReposIds: Array<number> = [];
   state: StateStore = new StateStore();
@@ -12,16 +13,22 @@ class RepositoriesStore {
   constructor() {
     makeObservable(this, {
       repos: observable,
+      activeRepo: observable,
       favoriteRepos: observable,
       favoriteReposIds: observable,
       setRepos: action,
       toggleFavoriteRepos: action,
+      setActiveRepo: action,
       getFavoriteCount: computed,
     });
   }
 
   get getFavoriteCount() {
     return this.favoriteReposIds.length;
+  }
+
+  setActiveRepo(repo: I_Repository) {
+    this.activeRepo = repo;
   }
 
   setRepos(repos: Array<I_Repository>) {

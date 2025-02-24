@@ -12,7 +12,7 @@
   --border-color: 33, 34, 35;
 
   --favorite-button-true: 212, 67, 51;
-  --favorite-button-false: var(--base-color);
+  --favorite-button-navigation-color: var(--base-color);
   --favorite-button-stroke-width-true: 1;
   --favorite-button-stroke-width-false: 0;
 

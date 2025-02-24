@@ -10,9 +10,9 @@ import { useStore } from '../../providers/store/store';
 import { observer } from 'mobx-react';
 
 const Profile: FC = observer(() => {
-  const { pagesStore, reposStore } = useStore();
+  const { reposStore } = useStore();
   const repo = useMemo(() => {
-    return reposStore.repos.find((repo) => repo.id === pagesStore.repoId);
+    return reposStore.activeRepo;
   }, []);
 
   const onClick = () => {
@@ -24,7 +24,7 @@ const Profile: FC = observer(() => {
 
   return (
     <section className={styles.container}>
-      {repo ? (
+      {repo && (
         <>
           <h1 className={styles.title}>Профиль</h1>
           <div className={styles.info}>
@@ -54,8 +54,6 @@ const Profile: FC = observer(() => {
             ]}
           />
         </>
-      ) : (
-        <p>Такого профиля нет</p>
       )}
     </section>
   );

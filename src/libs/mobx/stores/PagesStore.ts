@@ -1,21 +1,34 @@
-import { observable, action, makeObservable } from 'mobx';
+import { observable, action, makeObservable, computed } from 'mobx';
 import { E_Pages } from '../../../types/E_Pages';
 
 class PagesStore {
-  page: E_Pages = E_Pages.MAIN;
-  repoId: number | null = null;
+  breadcrumbs: E_Pages[] = [E_Pages.MAIN];
 
   constructor() {
     makeObservable(this, {
-      page: observable,
-      setPage: action,
+      breadcrumbs: observable,
+      addPage: action,
+      goPrevPage: action,
+      currentPage: computed,
+      prevPage: computed,
     });
   }
 
-  setPage(page: E_Pages, repoId?: number) {
-    this.page = page;
-    if (repoId) {
-      this.repoId = repoId;
+  get currentPage() {
+    return this.breadcrumbs.at(-1) || this.breadcrumbs[0];
+  }
+
+  get prevPage() {
+    return this.breadcrumbs.at(-2) || this.breadcrumbs[0];
+  }
+
+  addPage(page: E_Pages) {
+    this.breadcrumbs.push(page);
+  }
+
+  goPrevPage() {
+    if (this.breadcrumbs.length > 1) {
+      this.breadcrumbs.pop();
     }
   }
 }

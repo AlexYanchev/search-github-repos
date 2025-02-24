@@ -14,13 +14,9 @@ const App: FC = observer(() => {
   const { reposStore, pagesStore } = useStore();
 
   const getScreen = () => {
-    switch (pagesStore.page) {
+    switch (pagesStore.currentPage) {
       case E_Pages.PROFILE: {
-        return (
-          <>
-            <Profile />
-          </>
-        );
+        return <Profile />;
       }
       case E_Pages.FAVORITES: {
         return (
@@ -49,10 +45,11 @@ const App: FC = observer(() => {
       }
     }
   };
+
   return (
     <div className={styles.app}>
       <Header />
-      {pagesStore.page !== E_Pages.MAIN && <BackButton goTo={E_Pages.MAIN} />}
+      {pagesStore.currentPage !== E_Pages.MAIN && <BackButton />}
       <div className={styles.mainContainer}>
         <main className={styles.main}>{getScreen()}</main>
       </div>

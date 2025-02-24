@@ -50,7 +50,10 @@ const Card: FC<CardProps> = observer(({ repo }) => {
           <ActionButton
             text='Подробнее'
             pSize='small'
-            onAction={() => pagesStore.setPage(E_Pages.PROFILE, repo.id)}
+            onAction={() => {
+              pagesStore.addPage(E_Pages.PROFILE);
+              store.setActiveRepo(repo);
+            }}
           />,
         ]}
       />
