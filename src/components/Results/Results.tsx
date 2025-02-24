@@ -18,11 +18,13 @@ const Results: FC<ResultsProps> = observer(({ list }) => {
       {store.state.loading ? (
         <Spinner size='lg' />
       ) : (
-        <>
+        <ul className={styles.items}>
           {list.map((repo) => (
-            <Card key={repo.id} repo={repo} />
+            <li key={repo.id} className={styles.itemContainer}>
+              <Card repo={repo} />
+            </li>
           ))}
-        </>
+        </ul>
       )}
     </div>
   );

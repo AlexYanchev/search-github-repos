@@ -1,13 +1,3 @@
-.itemContainer {
-  height: 180px;
-  width: 100%;
-  max-width: 282px;
-  border-radius: var(--border-radius-lg);
-  background-color: rgb(var(--base-color));
-  padding: 24px;
-  margin-bottom: 12px;
-}
-
 .infoContainer {
   display: flex;
   justify-content: space-between;

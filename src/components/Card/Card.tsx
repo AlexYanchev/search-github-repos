@@ -23,7 +23,7 @@ const Card: FC<CardProps> = observer(({ repo }) => {
     store.toggleFavoriteRepos(repo);
   };
   return (
-    <div className={styles.itemContainer}>
+    <>
       <div className={styles.infoContainer}>
         <Avatar src={repo.owner.avatar_url} size={32} />
 
@@ -57,7 +57,7 @@ const Card: FC<CardProps> = observer(({ repo }) => {
           />,
         ]}
       />
-    </div>
+    </>
   );
 });
 export default Card;
