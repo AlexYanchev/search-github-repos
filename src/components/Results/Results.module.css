@@ -21,3 +21,9 @@
   padding: 24px;
   margin-bottom: 12px;
 }
+
+@media screen and (max-width: 600px) {
+  .itemContainer {
+    max-width: unset;
+  }
+}

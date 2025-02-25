@@ -30,3 +30,9 @@
   font-weight: 400;
   font-size: 0.9rem;
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: unset;
+  }
+}

@@ -41,3 +41,11 @@
 .selectContainer[data-isopen='true']::after {
   transform: rotate(180deg);
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    justify-content: stretch;
+    gap: 10px;
+  }
+}

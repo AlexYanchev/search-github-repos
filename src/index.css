@@ -36,6 +36,8 @@
   --spinner-size-lg: 50px;
 
   --spinner-color: rgb(var(--base-color-dark));
+
+  --mobile-width-size-s: 600px;
 }
 
 * {
